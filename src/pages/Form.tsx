@@ -6,16 +6,16 @@ const Form = () => {
 
   return (
     <>
-      <form ref={form} onSubmit={handleSubmit}>
+      <form ref={form} onSubmit={handleSubmit} className="flex flex-col gap-5">
         <label htmlFor="name">
           名前:
-          <input id="name" type="text" ref={name} />
+          <input id="name" type="text" ref={name} className="border bg-gray-300 text-black" />
         </label>
         <label htmlFor="age">
           年齢:
-          <input id="age" type="number" ref={age} />
+          <input id="age" type="number" ref={age} className="border bg-gray-300 text-black" />
         </label>
-        <fieldset>
+        <fieldset className="space-x-10 py-3 w-1/2 mx-auto border">
           <legend>性別: </legend>
           <label htmlFor="male">
             男性:
@@ -31,7 +31,12 @@ const Form = () => {
           <input type="checkbox" ref={newsSubscribe} />
         </label>
 
-        <button onClick={handleSubmit}>送信</button>
+        <button
+          onClick={handleSubmit}
+          className="bg-gray-500 text-white w-1/5 mx-auto py-1 rounded-full hover:opacity-80 cursor-pointer"
+        >
+          送信
+        </button>
       </form>
     </>
   );
